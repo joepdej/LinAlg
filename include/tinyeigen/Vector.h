@@ -1,5 +1,5 @@
-#ifndef TINYEIGEN_VECTOR_H_;
-#define TINYEIGEN_VECTOR_H_;
+#ifndef TINYEIGEN_VECTOR_H_
+#define TINYEIGEN_VECTOR_H_
 
 namespace tinyeigen {
 
@@ -22,7 +22,7 @@ namespace tinyeigen {
         Vector operator+(const Vector& other) const;
         Vector operator-(const Vector& other) const;
 
-        Vector operator*(double scalar);
+        Vector operator*(double scalar) const;
 
         double Dot(const Vector& other) const;
     };
