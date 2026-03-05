@@ -110,14 +110,14 @@ namespace tinyeigen {
             throw std::invalid_argument("Matrix dimensions incompatible for multiplication");
         }
 
-        Matrix result(cols_, rows_);
+        Matrix result(rows_, other.cols_);
         for (int i = 0; i < rows_; i++){
             for (int j = 0; j < other.cols_; j++){
                 double sum = 0.0;
                 for (int k = 0; k < cols_; k++){
-                    sum += elements_[i * cols_ + k] * other.elements_[i * other.cols_ + k];
+                    sum += elements_[i * cols_ + k] * other.elements_[k * other.cols_ + j];
                 }
-                result.elements_[i * cols_ + j] = sum;
+                result.elements_[i * other.cols_ + j] = sum;
             }
 
         }
