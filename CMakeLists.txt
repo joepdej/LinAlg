@@ -7,6 +7,7 @@ add_library(LinAlg)
 target_sources(LinAlg
   PRIVATE
     src/Vector.cc
+    src/Matrix.cc
 
   PUBLIC
     FILE_SET myHeaders
@@ -15,6 +16,7 @@ target_sources(LinAlg
       include
     FILES
       include/tinyeigen/Vector.h
+      include/tinyeigen/Matrix.h
 
 )
 
@@ -26,5 +28,8 @@ target_include_directories(LinAlg
 enable_testing()
 
 add_executable(vector_tests tests/vector_tests.cc)
+add_executable(matrix_tests tests/matrix_tests.cc)
 target_link_libraries(vector_tests PRIVATE LinAlg)
+target_link_libraries(matrix_tests PRIVATE LinAlg)
 add_test(NAME vector_tests COMMAND vector_tests)
+add_test(NAME matrix_tests COMMAND matrix_tests)
