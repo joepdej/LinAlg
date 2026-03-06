@@ -138,6 +138,18 @@ namespace tinyeigen {
             }
         return result;
     }
+
+    double Vector::Norm() const {
+        return std::sqrt(Dot(*this));
+    }
+
+    Vector Vector::Normalize() const {
+        double norm = Norm();
+        if (norm == 0.0) {
+            throw std::runtime_error("Cannot normalize to a zero vector");
+        }
+        return *this * (1.0 / norm);
+    }
 }
 
 
