@@ -1,4 +1,5 @@
 #include "tinyeigen/Vector.h"
+#include "tinyeigen/Matrix.h"
 
 #include <algorithm>
 #include <stdexcept>
@@ -121,6 +122,21 @@ namespace tinyeigen {
         }
 
         return sum;
+    }
+
+    Vector Vector::operator*(const Matrix& other) const {
+        if (size_ != other.Rows()) {
+            throw std::invalid_argument("Vector size must match the number of rows in the matrix");
+        }
+        Vector result(other.Cols());
+            for(int i = 0; i < other.Cols(); ++i) {
+                double sum = 0.0;
+                for (int j = 0; j < size_; j++){
+                    sum += elements_[j] * other(j, i);
+                }
+                result[i] = sum;
+            }
+        return result;
     }
 }
 
