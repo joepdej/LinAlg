@@ -65,6 +65,18 @@ int main()
         return Fail("Dot() failed");
     }
 
+        // Norm
+    const double norm = a.Norm();  // sqrt(1 + 4 + 9) = sqrt(14)
+    if (!AlmostEqual(norm, std::sqrt(14.0))) {
+        return Fail("Norm() failed");
+    }
+
+    // Normalize
+    Vector n = a.Normalize();
+    if (!AlmostEqual(n.Norm(), 1.0)) {
+        return Fail("Normalize() failed");
+    }
+
     std::cout << "[PASS] vector_tests\n";
     return 0;
 }

@@ -30,6 +30,8 @@ namespace tinyeigen {
 
 
         double Dot(const Vector& other) const;
+        double Norm() const;
+        Vector Normalize() const;
 
     };
     
