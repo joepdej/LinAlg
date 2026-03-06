@@ -135,6 +135,21 @@ namespace tinyeigen {
         return result;
     }
 
+    Vector Matrix::operator*(const Vector& other) const {
+        if (other.Size() != cols_) {
+            throw std::invalid_argument("Vector size must match the number of columns in the matrix");
+        }
+        Vector result(rows_);
+        for (int i = 0; i < rows_; ++i) {
+            double sum = 0.0;
+            for (int j = 0; j < cols_; ++j) {
+                sum += elements_[i * cols_ + j] * other[j];
+            }
+            result[i] = sum;
+        }
+        return result;
+    }
+
 
 
 }

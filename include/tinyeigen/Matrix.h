@@ -3,6 +3,8 @@
 
 namespace tinyeigen {
 
+    class Vector;
+
     class Matrix
     {
         private:
@@ -27,6 +29,9 @@ namespace tinyeigen {
             Matrix operator-(const Matrix& other) const;
             Matrix operator*(double scalar) const;
             Matrix operator*(const Matrix& other) const;
+
+            Vector operator*(const Vector& other) const;
+
 
 
 
