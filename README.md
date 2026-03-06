@@ -1,4 +1,4 @@
-# tinyeigen
+# TinyEigen
 
 A tiny, dependency-free C++ linear-algebra library for dense vectors and matrices.
 
