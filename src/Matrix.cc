@@ -125,4 +125,18 @@ namespace tinyeigen {
 
     }
 
+    Matrix Matrix::Transpose() const{
+        Matrix result(cols_, rows_);
+        for (int i = 0; i < rows_; ++i) {
+            for (int j = 0; j < cols_; ++j) {
+                result.elements_[j* rows_ + i] = elements_[i * cols_ + j];
+            }
+        }
+        return result;
+    }
+    
+    Matrix Matrix::operator*(const Vector& other) const {
+
+    }
+
 }

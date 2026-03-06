@@ -18,6 +18,7 @@ namespace tinyeigen {
 
             int Rows() const;
             int Cols() const;
+            Matrix Transpose() const;
 
             double& operator()(int row, int col);
             const double& operator()(int row, int col) const;
@@ -26,6 +27,9 @@ namespace tinyeigen {
             Matrix operator-(const Matrix& other) const;
             Matrix operator*(double scalar) const;
             Matrix operator*(const Matrix& other) const;
+            Matrix operator*(const Vector& other) const;
+
+
 
     };
 
