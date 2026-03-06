@@ -134,9 +134,7 @@ namespace tinyeigen {
         }
         return result;
     }
-    
-    Matrix Matrix::operator*(const Vector& other) const {
 
-    }
+
 
 }
